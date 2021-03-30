@@ -39,7 +39,12 @@ class BasicSort(object):
 
     @classmethod
     def selection_sort(cls, unsort_list):
-        """选择排序"""
+        """
+            选择排序,传入对象为list
+            1. 原理：每次选择剩余序列中的最小值
+            2. 空间复杂度：O(1)——需要一个temp做中间转换
+            3. 时间复杂度：最优-；最差-
+        """
         print 'basic list is {0}'.format(unsort_list)
         for i in range(0, len(unsort_list)):
             current = i
