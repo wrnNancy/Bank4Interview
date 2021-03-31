@@ -60,12 +60,28 @@ class BasicSort(object):
             print 'after {0} time sorted, list is {1}'.format(i, unsort_list)
         return unsort_list
 
+    @classmethod
+    def bubble_sort(cls, unsort_list):
+        """
+            冒泡排序,传入对象为list
+            1. 原理：相邻元素两两比较并置换
+            2. 空间复杂度：O(1)——需要一个temp做中间转换
+            3. 时间复杂度：最优-；最差-
+        """
+        for time in range(0, len(unsort_list)):
+            for i in range(0, len(unsort_list)-1):
+                j = i+1
+                if unsort_list[i] > unsort_list[j]:
+                    temp = unsort_list[i]
+                    unsort_list[i] = unsort_list[j]
+                    unsort_list[j] = temp
+        return unsort_list
+
 
 if __name__ == '__main__':
-    test_sort = BasicSort()
     test_list_sorted = [1, 2, 3, 4, 5, 6, 7]
     test_list_desorted = [7, 6, 5, 4, 3, 2, 1]
     test_list_unsorted = [3, 2, 4, 6, 7, 5, 1]
-    print test_sort.selection_sort(test_list_sorted)
-    print test_sort.selection_sort(test_list_desorted)
-    print test_sort.selection_sort(test_list_unsorted)
+    print BasicSort().bubble_sort(test_list_sorted)
+    print BasicSort().bubble_sort(test_list_desorted)
+    print BasicSort().bubble_sort(test_list_unsorted)
